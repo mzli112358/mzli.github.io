@@ -3,12 +3,24 @@
   // 根据当前页面路径计算相对路径
   function getBasePath() {
     const path = window.location.pathname;
-    // 计算从当前页面到根目录的相对路径
-    const depth = (path.match(/\//g) || []).length - 1; // 减去开头的'/'
-    if (depth <= 1) {
-      return './'; // 根目录或一级目录
+    // 移除开头的 '/' 和结尾的 '/'
+    const cleanPath = path.replace(/^\/|\/$/g, '');
+    
+    // 如果路径为空或只有 'index.html'，说明在根目录
+    if (!cleanPath || cleanPath === 'index.html') {
+      return './';
     }
-    return '../'; // 二级或更深目录
+    
+    // 计算路径深度（按 '/' 分割）
+    const pathParts = cleanPath.split('/').filter(part => part && part !== 'index.html');
+    
+    // 如果只有一级目录（如 portfolio 或 publication），返回 '../'
+    if (pathParts.length === 1) {
+      return '../';
+    }
+    
+    // 更深层的目录，需要更多的 '../'
+    return '../'.repeat(pathParts.length);
   }
 
   const basePath = getBasePath();
