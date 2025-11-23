@@ -32,13 +32,32 @@ Currently, I am looking for M.Sc./Ph.D. opportunities in Robotics/AI to further 
 
 # 📝 Publications
 
-**Demonstration Selection for In-Context Learning via Reinforcement Learning**  
-*International Conference on Machine Learning (ICML 2025)*  
-Xubin Wang, Jianfei Wu, Yichen Yuan, Deyu Cai, **Mingzhe Li**, Weijia Jia
+{% if site.author.googlescholar %}
+  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+{% endif %}
 
-* Proposed **RDES**, a reinforcement learning-based method to optimize demonstration selection for in-context learning, significantly improving few-shot classification accuracy.
+{% include base_path %}
 
-* [PDF](https://arxiv.org/abs/2412.03966) | [Poster](https://icml.cc/virtual/2025/poster/43807)
+<!-- New style rendering if publication categories are defined -->
+{% if site.publication_category %}
+  {% for category in site.publication_category  %}
+    {% assign title_shown = false %}
+    {% for post in site.publications reversed %}
+      {% if post.category != category[0] %}
+        {% continue %}
+      {% endif %}
+      {% unless title_shown %}
+        <h2>{{ category[1].title }}</h2><hr />
+        {% assign title_shown = true %}
+      {% endunless %}
+      {% include archive-single.html %}
+    {% endfor %}
+  {% endfor %}
+{% else %}
+  {% for post in site.publications reversed %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% endif %}
 
 ---
 
