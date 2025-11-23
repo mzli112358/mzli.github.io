@@ -1,50 +1,24 @@
-# Martin Li's Academic Portfolio
+# Martin 的个人主页仓库
 
-This repository contains the source code for Martin Li's (Mingzhe Li) academic homepage and personal portfolio website, built with Jekyll.
-
-## Project Structure
+## 文件结构
 
 ```
 .
-├── _config.yml              # Jekyll configuration file
-├── _data/                   # Data files
-│   ├── navigation.yml       # Navigation menu
-│   ├── authors.yml          # Author information
-│   └── ui-text.yml          # UI text strings
-├── _includes/               # Reusable HTML fragments
-│   ├── masthead.html        # Navigation bar
-│   ├── footer.html          # Footer
-│   └── author-profile.html  # Author profile sidebar
-├── _layouts/                # Page layout templates
-│   ├── default.html         # Default layout
-│   ├── single.html          # Single page layout
-│   └── archive.html         # Archive page layout
-├── _pages/                  # Page content files
-│   ├── about.md             # Homepage (Profile)
-│   └── portfolio.html       # Portfolio page
-├── _publications/           # Publications collection
-│   └── *.md                 # Individual publication files
-├── _portfolio/              # Portfolio projects collection
-│   └── *.md                 # Individual project files
-├── _posts/                  # Blog posts
-├── _sass/                   # Sass stylesheets
-├── assets/                  # Static assets (CSS, JS, fonts)
-├── images/                  # Image assets
-└── files/                   # Document files (PDFs, etc.)
+├── index.html              # 主页
+├── portfolio/              # 作品集
+│   ├── index.html
+│   └── llm-agent.html
+├── publication/            # 论文
+│   └── icml2025.html
+├── assets/                 # 资源文件
+│   ├── css/
+│   ├── js/
+│   └── images/
+└── README.md
 ```
 
-## Local Development
+## 页面关系
 
-```bash
-# Install dependencies
-bundle install
-
-# Start local server
-bundle exec jekyll serve -l -H localhost
-
-# Access at http://localhost:4000
-```
-
-## Deployment
-
-The site is automatically deployed via GitHub Pages. Changes pushed to the `main` branch will be automatically built and published.
+- 主页 (`index.html`) ← → 作品集 (`portfolio/index.html`)
+- 作品集列表 → 项目详情 (`portfolio/llm-agent.html`)
+- 主页 → 论文详情 (`publication/icml2025.html`)
