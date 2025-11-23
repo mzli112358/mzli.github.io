@@ -34,19 +34,11 @@ Currently, I am looking for M.Sc./Ph.D. opportunities in Robotics/AI to further 
 
 **Demonstration Selection for In-Context Learning via Reinforcement Learning**  
 *International Conference on Machine Learning (ICML 2025)*  
-**Mingzhe Li**, [Co-authors...]
+Xubin Wang, Jianfei Wu, Yichen Yuan, Deyu Cai, **Mingzhe Li**, Weijia Jia
 
 * Proposed **RDES**, a reinforcement learning-based method to optimize demonstration selection for in-context learning, significantly improving few-shot classification accuracy.
 
-* [PDF] | [Code] | [Poster]
-
-**Molecular Toxicity Prediction based on Graph Neural Networks**  
-*AI for Science Competition (2023)*  
-**Mingzhe Li**, [Co-authors...]
-
-* Modeled molecular structures using SMILES data and GNNs for multi-class toxicity prediction.
-
-* [Project Page]
+* [PDF](https://arxiv.org/abs/2412.03966) | [Poster](https://icml.cc/virtual/2025/poster/43807)
 
 ---
 

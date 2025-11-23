@@ -2,7 +2,7 @@
 title: "Demonstration Selection for In-Context Learning via Reinforcement Learning"
 collection: publications
 category: conferences
-permalink: /publication/2025-10-01-demonstration-selection-in-context-learning
+permalink: /publication/mzli-ICML-2025
 excerpt: 'This paper introduces RDES, a reinforcement learning-based approach to optimize demonstration selection for in-context learning, significantly improving performance on text classification and reasoning tasks.'
 date: 2024-12-05
 venue: 'arXiv preprint arXiv:2412.03966'

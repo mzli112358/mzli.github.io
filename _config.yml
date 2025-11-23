@@ -30,7 +30,7 @@ author:
   location         : "Zhuhai / Guangzhou, China"
   employer         : "Beijing Normal-Hong Kong Baptist University (BNBU/UIC)"
   uri              : # URL
-  email            : "s230033021@mail.bnbu.edu.cn" 
+  email            : "s230033021[at]mail[dot]bnbu[dot]edu[dot]cn / mzli112358[at]gmail[dot]com" 
 
   # Academic websites
   academia         : # URL
@@ -81,10 +81,6 @@ author:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
-  books:
-    title: 'Books'
-  manuscripts:
-    title: 'Journal Articles'    
   conferences:
     title: 'Conference Papers'
 
@@ -243,7 +239,7 @@ defaults:
       author_profile: true
       read_time: true
       comments: true
-      share: true
+      share: false
       related: true
   # _pages
   - scope:
@@ -259,7 +255,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
+      share: false
       comments: true
   # _publications
   - scope:
@@ -268,7 +264,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
+      share: false
       comments: true
   # _portfolio
   - scope:
@@ -277,7 +273,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
+      share: false
       comment: true
   # _talks
   - scope:
@@ -286,7 +282,7 @@ defaults:
     values:
       layout: talk
       author_profile: true
-      share: true
+      share: false
 
 
 # Sass/SCSS
