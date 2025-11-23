@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Mingzhe (Martin) Li"
+title: "Profile"
 author_profile: true
 redirect_from: 
   - /about/
@@ -47,7 +47,7 @@ Currently, I am looking for M.Sc./Ph.D. opportunities in Robotics/AI to further 
         {% continue %}
       {% endif %}
       {% unless title_shown %}
-<h2 class="archive__subtitle">{{ category[1].title }}</h2>
+        <h2 class="archive__subtitle">{{ category[1].title }}</h2>
         {% assign title_shown = true %}
       {% endunless %}
       {% include archive-single.html %}
