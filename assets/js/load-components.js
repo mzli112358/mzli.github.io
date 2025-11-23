@@ -4,22 +4,35 @@
   function getBasePath() {
     const path = window.location.pathname;
     // 移除开头的 '/' 和结尾的 '/'
-    const cleanPath = path.replace(/^\/|\/$/g, '');
+    let cleanPath = path.replace(/^\/|\/$/g, '');
     
-    // 如果路径为空或只有 'index.html'，说明在根目录
-    if (!cleanPath || cleanPath === 'index.html') {
+    // 如果路径为空，说明在根目录
+    if (!cleanPath) {
       return './';
     }
     
-    // 计算路径深度（按 '/' 分割）
-    const pathParts = cleanPath.split('/').filter(part => part && part !== 'index.html');
-    
-    // 如果只有一级目录（如 portfolio 或 publication），返回 '../'
-    if (pathParts.length === 1) {
-      return '../';
+    // 移除文件名（最后一个 '/' 之后的部分，包括 index.html）
+    // 例如：'publication/icml2025.html' -> 'publication'
+    //      'portfolio/index.html' -> 'portfolio'
+    const lastSlashIndex = cleanPath.lastIndexOf('/');
+    if (lastSlashIndex !== -1) {
+      cleanPath = cleanPath.substring(0, lastSlashIndex);
+    } else {
+      // 没有 '/'，说明是根目录下的文件（如 index.html）
+      return './';
     }
     
-    // 更深层的目录，需要更多的 '../'
+    // 如果移除文件名后为空，说明在根目录
+    if (!cleanPath) {
+      return './';
+    }
+    
+    // 计算目录深度（按 '/' 分割）
+    const pathParts = cleanPath.split('/').filter(part => part);
+    
+    // 根据目录深度返回相应的相对路径
+    // 一级目录（如 portfolio 或 publication）返回 '../'
+    // 更深层目录返回更多的 '../'
     return '../'.repeat(pathParts.length);
   }
 
