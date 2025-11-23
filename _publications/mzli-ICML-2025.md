@@ -5,7 +5,9 @@ category: conferences
 permalink: /publication/mzli-ICML-2025
 excerpt: 'This paper introduces RDES, a reinforcement learning-based approach to optimize demonstration selection for in-context learning, significantly improving performance on text classification and reasoning tasks.'
 date: 2024-12-05
-venue: 'arXiv preprint arXiv:2412.03966'
+venue: 'ICML 2025 (International Conference on Machine Learning 2025)'
+conference: 'ICML 2025'
+arxiv: 'arXiv preprint arXiv:2412.03966'
 paperurl: 'https://arxiv.org/abs/2412.03966'
 posterurl: 'https://icml.cc/virtual/2025/poster/43807'
 citation: 'Xubin Wang, Jianfei Wu, Yichen Yuan, Deyu Cai, Mingzhe Li, Weijia Jia. (2024). &quot;Demonstration Selection for In-Context Learning via Reinforcement Learning.&quot; <i>arXiv preprint arXiv:2412.03966</i>.'
@@ -16,7 +18,9 @@ authors: 'Xubin Wang, Jianfei Wu, Yichen Yuan, Deyu Cai, Mingzhe Li, Weijia Jia'
 
 **Published:** December 5, 2024
 
-**Journal:** arXiv preprint arXiv:2412.03966
+**Conference:** ICML 2025 (International Conference on Machine Learning 2025)
+
+**Preprint:** arXiv preprint arXiv:2412.03966
 
 [Download Paper]({{ page.paperurl }}){: .btn} | [View Poster]({{ page.posterurl }}){: .btn}
 
