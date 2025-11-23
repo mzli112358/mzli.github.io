@@ -47,7 +47,7 @@ Currently, I am looking for M.Sc./Ph.D. opportunities in Robotics/AI to further 
         {% continue %}
       {% endif %}
       {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
+        <h2>{{ category[1].title }}</h2>
         {% assign title_shown = true %}
       {% endunless %}
       {% include archive-single.html %}
