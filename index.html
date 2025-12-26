@@ -680,7 +680,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
     <div class="sidebar sticky" style="padding-top: 0;">
       <div itemscope="" itemtype="http://schema.org/Person">
         <div class="author__avatar">
-          <img src="assets/images/headphoto.png" id="sidebar-avatar" class="author__avatar" alt="Mingzhe (Martin) Li" fetchpriority="high">
+          <img src="assets/images/headphoto.png" id="sidebar-avatar" class="author__avatar preview-image" alt="Mingzhe (Martin) Li" fetchpriority="high" style="cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
         </div>
         <div class="author__content">
           <h3 class="author__name">Mingzhe (Martin) Li</h3>
@@ -689,7 +689,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
         <div class="author__urls-wrapper">
           <button class="btn btn--inverse">Follow</button>
           <ul class="author__urls social-icons">
-            <li class="author__desktop">📍 Zhuhai / Guangzhou, China</li>
+            <li class="author__desktop">📍 Guangdong, China</li>
             <li class="author__desktop">🏛️ Beijing Normal-Hong Kong Baptist University (BNBU/UIC)</li>
             <li>📧 s230033021[at]mail[dot]bnbu[dot]edu[dot]cn / mzli112358[at]gmail[dot]com</li>
             <li><a href="https://scholar.google.com/citations?user=OJAy7EEAAAAJ" target="_blank" rel="noopener noreferrer">📚 Google Scholar</a></li>
@@ -744,7 +744,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                   This paper introduces the Relevance-Diversity Enhanced Selection (RDES), an innovative approach that leverages reinforcement learning (RL) frameworks to optimize the selection of diverse reference demonstrations for tasks amenable to in-context learning (ICL), particularly text classification and reasoning, in few-shot prompting scenarios.</p>
               </p>
 
-              <img src="assets/images/icml.png" alt="ICML 2025 Poster" class="preview-image" style="width: 100%; height: auto; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+              <img src="assets/images/icml_nano.png" data-full-src="assets/images/icml.png" alt="ICML 2025 Poster" class="preview-image" style="width: 100%; height: auto; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
               
               <p class="archive__item-excerpt" itemprop="description"></p>
               <p></p>
@@ -782,7 +782,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
             <li><strong>Engineering:</strong> Spearheaded the design of 4 competition robots. Implemented a "4-3-2-1" agile iteration model (Design-Produce-Debug-Optimize).</li>
             <li><strong>Achievement:</strong> Won <strong>First Prize</strong> (Regional) and established a standardized "Lab Wiki" for knowledge inheritance.</li>
           </ul>
-          <img src="assets/images/rm.png" alt="RoboMaster Robotics Team" style="width: 100%; height: auto;">
+          <img src="assets/images/rm_nano.png" data-full-src="assets/images/rm.png" alt="RoboMaster Robotics Team" class="preview-image" style="width: 100%; height: auto; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
           <h2 id="3-llm-agent-for-industrial--ip-applications">3. LLM Agent for Industrial &amp; IP Applications</h2>
           <p><em>Keywords: RAG, LangChain, Prompt Engineering, Multi-Agent System</em></p>
           <ul>
@@ -996,7 +996,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
 
   <script>
     (function() {
-      const previewImage = document.querySelector('.preview-image');
+      const previewImages = document.querySelectorAll('.preview-image');
       const modal = document.getElementById('imageModal');
       const modalImage = document.getElementById('modalImage');
       const closeBtn = document.getElementById('imageModalClose');
@@ -1004,7 +1004,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
       const container = document.querySelector('.image-modal-container');
       const content = document.querySelector('.image-modal-content');
 
-      if (!previewImage || !modal || !modalImage) return;
+      if (!previewImages.length || !modal || !modalImage) return;
 
       let isDraggingContainer = false;
       let isDraggingImage = false;
@@ -1018,18 +1018,22 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
       let translateX = 0;
       let translateY = 0;
 
-      // Open modal
-      previewImage.addEventListener('click', function(e) {
-        e.stopPropagation();
-        modalImage.src = this.src;
-        modalImage.alt = this.alt;
-        scale = 1;
-        translateX = 0;
-        translateY = 0;
-        updateImageTransform();
-        resetContainerPosition();
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+      // Open modal for all preview images
+      previewImages.forEach(function(previewImage) {
+        previewImage.addEventListener('click', function(e) {
+          e.stopPropagation();
+          // Use full-size image if data-full-src exists, otherwise use current src
+          const fullSrc = this.getAttribute('data-full-src') || this.src;
+          modalImage.src = fullSrc;
+          modalImage.alt = this.alt;
+          scale = 1;
+          translateX = 0;
+          translateY = 0;
+          updateImageTransform();
+          resetContainerPosition();
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
       });
 
       // Close modal
