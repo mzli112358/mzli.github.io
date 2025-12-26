@@ -10,22 +10,21 @@
 
 ```
 .
-├── index.html              # 主页（个人简介）
-├── portfolio/              # 作品集目录
-│   ├── index.html          # 作品集主页
-│   └── llm-agent.html      # LLM Agent 项目详情
-├── publication/            # 论文目录
+├── index.html              # 主页（个人简介、研究、项目、论文）
+├── README.md               # 项目说明文档
 ├── assets/                 # 静态资源目录
-│   ├── components/         # 可复用组件
-│   │   ├── navbar.html     # 导航栏组件
-│   │   └── sidebar.html    # 侧边栏组件
 │   ├── css/                # 样式文件
 │   │   ├── main.css        # 主样式表
 │   │   └── academicons.css # 学术图标样式
 │   ├── js/                 # JavaScript 文件
 │   │   ├── load-components.js # 组件加载脚本
-│   │   └── ...             # 其他 JS 库
+│   │   ├── main.min.js     # 主脚本
+│   │   ├── plotly.min.js   # Plotly 数据可视化库
+│   │   ├── polyfill.min.js # Polyfill 库
+│   │   └── tex-mml-chtml.js # MathJax 数学公式渲染
 │   └── images/             # 图片资源
+│       ├── headphoto.png   # 个人头像
+│       └── ...             # 其他图片资源
 └── .github/
     └── workflows/
         └── deploy.yml      # GitHub Actions 部署配置
@@ -35,7 +34,6 @@
 
 - **前端框架**：纯 HTML/CSS/JavaScript
 - **部署方式**：GitHub Pages + GitHub Actions
-- **组件化**：使用 JavaScript 动态加载公共组件（导航栏、侧边栏）
 - **数学公式**：MathJax 支持 LaTeX 数学公式渲染
 - **数据可视化**：Plotly.js
 
@@ -66,23 +64,22 @@
 
 ## 📝 添加新内容
 
-### 添加新论文
+### 修改主页内容
 
-1. 在 `publication/` 目录下创建新的 HTML 文件
-2. 参考现有论文页面的格式
-3. 在主页的论文列表中添加链接
+直接编辑 `index.html` 文件，主页包含以下部分：
+- **个人简介** (About Me)
+- **新闻动态** (News)
+- **论文发表** (Publications)
+- **项目作品** (Selected Projects)
+- **工作经历** (Experience)
+- **荣誉奖项** (Honors & Awards)
 
-### 添加新项目
+### 添加图片资源
 
-1. 在 `portfolio/` 目录下创建新的 HTML 文件
-2. 参考现有项目的格式
-3. 在作品集页面中添加链接
-
-### 修改公共组件
-
-- **导航栏**：编辑 `assets/components/navbar.html`
-- **侧边栏**：编辑 `assets/components/sidebar.html`
-- 修改后，所有使用这些组件的页面会自动更新
+将图片文件放置在 `assets/images/` 目录下，然后在 HTML 中引用：
+```html
+<img src="assets/images/your-image.png" alt="描述">
+```
 
 ## 🔄 自动部署
 
@@ -105,4 +102,4 @@
 
 ---
 
-*最后更新：2025年*
+*最后更新：2025年12月27日*
