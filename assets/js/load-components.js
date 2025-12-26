@@ -48,9 +48,7 @@
           navbarContainer.innerHTML = html;
           // 设置导航链接
           const navProfile = document.getElementById('nav-profile');
-          const navPortfolio = document.getElementById('nav-portfolio');
           if (navProfile) navProfile.href = basePath + 'index.html';
-          if (navPortfolio) navPortfolio.href = basePath + 'portfolio/index.html';
         })
         .catch(err => console.error('Failed to load navbar:', err));
     }
