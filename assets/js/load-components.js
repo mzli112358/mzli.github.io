@@ -12,7 +12,7 @@
     }
     
     // 移除文件名（最后一个 '/' 之后的部分，包括 index.html）
-    // 例如：'publication/icml2025.html' -> 'publication'
+    // 例如：'publication/paper.html' -> 'publication'
     //      'portfolio/index.html' -> 'portfolio'
     const lastSlashIndex = cleanPath.lastIndexOf('/');
     if (lastSlashIndex !== -1) {

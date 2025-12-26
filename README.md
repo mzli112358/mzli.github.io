@@ -15,7 +15,6 @@
 │   ├── index.html          # 作品集主页
 │   └── llm-agent.html      # LLM Agent 项目详情
 ├── publication/            # 论文目录
-│   └── icml2025.html       # ICML 2025 论文详情
 ├── assets/                 # 静态资源目录
 │   ├── components/         # 可复用组件
 │   │   ├── navbar.html     # 导航栏组件
@@ -70,7 +69,7 @@
 ### 添加新论文
 
 1. 在 `publication/` 目录下创建新的 HTML 文件
-2. 参考 `icml2025.html` 的格式
+2. 参考现有论文页面的格式
 3. 在主页的论文列表中添加链接
 
 ### 添加新项目
