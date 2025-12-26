@@ -66,7 +66,7 @@
           sidebarContainer.innerHTML = html;
           // 设置头像路径
           const avatar = document.getElementById('sidebar-avatar');
-          if (avatar) avatar.src = basePath + 'assets/images/Sticky.jpg';
+          if (avatar) avatar.src = basePath + 'assets/images/headphoto.png';
         })
         .catch(err => console.error('Failed to load sidebar:', err));
     }
